@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SecurePass - Password Security Tool</title>
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <h1>🔐 SecurePass</h1>
+            <p>Password Security Tool</p>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="container">
+
+        <h2>Password Generator & Strength Checker</h2>
+        <p class="subtitle">
+            Generate secure passwords and check their strength.
+        </p>
+
+        <!-- Password Generator -->
+        <section class="card">
+
+            <h3>Password Generator</h3>
+
+            <label for="length">Password Length</label>
+
+            <input
+                type="range"
+                id="length"
+                min="8"
+                max="32"
+                value="16"
+            >
+
+            <span id="lengthValue">16</span>
+
+            <div class="options">
+
+                <label>
+                    <input type="checkbox" id="uppercase" checked>
+                    Uppercase (A-Z)
+                </label>
+
+                <label>
+                    <input type="checkbox" id="lowercase" checked>
+                    Lowercase (a-z)
+                </label>
+
+                <label>
+                    <input type="checkbox" id="numbers" checked>
+                    Numbers (0-9)
+                </label>
+
+                <label>
+                    <input type="checkbox" id="symbols" checked>
+                    Symbols (@#$!)
+                </label>
+
+            </div>
+
+            <button id="generateBtn">
+                Generate Password
+            </button>
+
+            <div class="password-output">
+
+                <input
+                    type="text"
+                    id="generatedPassword"
+                    placeholder="Your password will appear here"
+                    readonly
+                >
+
+                <button id="copyBtn">
+                    Copy
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- Password Strength Checker -->
+        <section class="card">
+
+            <h3>Password Strength Checker</h3>
+
+            <input
+                type="password"
+                id="checkPassword"
+                placeholder="Enter your password"
+            >
+
+            <button id="checkBtn">
+                Check Strength
+            </button>
+
+            <div class="strength-section">
+
+                <p id="strengthText">
+                    Password Strength: Not Checked
+                </p>
+
+                <div class="strength-bar">
+                    <div id="strengthFill"></div>
+                </div>
+
+            </div>
+
+            <div id="suggestions">
+                <!-- Security suggestions appear here -->
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>SecurePass | Built for Cybersecurity Learning</p>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
